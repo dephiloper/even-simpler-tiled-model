@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://atlas.png" type="Texture" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://wfc.gd" type="Script" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "atlas.png 0"
@@ -47,7 +48,14 @@
 2/shapes = [  ]
 2/z_index = 0
 
-[node name="TileMap" type="TileMap"]
+[node name="ESTM" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1
 script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 4, 4 )
